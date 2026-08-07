@@ -189,7 +189,7 @@ h1.h-xl{
 
 /* ---- hero (split panel: copy + photos) ---- */
 .hero{ background:var(--blue-600); overflow:hidden; }
-.hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; align-items:stretch; min-height:420px; }
+.hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; align-items:stretch; height:500px; }
 .hero-copy{ padding:52px 56px; display:flex; flex-direction:column; justify-content:center; color:var(--on-blue); }
 .hero-kicker{
   display:inline-flex; align-items:center; gap:10px; align-self:flex-start;
@@ -219,7 +219,7 @@ h1.h-xl{
 }
 
 @media (max-width: 920px){
-  .hero-grid{ grid-template-columns:1fr; min-height:0; }
+  .hero-grid{ grid-template-columns:1fr; height:auto; }
   .hero-copy{ padding:44px 24px; }
   .hero-photos{ grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,120px); height:auto; }
   .hero-photos::after{
