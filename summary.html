@@ -18,6 +18,15 @@
   .fact-row{ display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--border); }
   .fact-row b{ min-width:130px; color:var(--blue-700); font-family:var(--font-head); }
   .print-bar{ display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px 24px; margin-bottom:44px; box-shadow:var(--shadow-sm); }
+
+  .elevator-band{ background:var(--ink); color:var(--bg); padding:88px 0; text-align:center; border-top:4px solid var(--blue-600); border-bottom:4px solid var(--blue-600); }
+  .elevator-quote{ font-family:var(--font-head); font-weight:800; font-size:clamp(1.25rem,2.6vw,1.9rem); line-height:1.45; color:#fff; max-width:820px; margin:26px auto 36px; font-style:normal; }
+  .elevator-quote em{ font-style:normal; color:var(--blue-500); }
+  .elevator-stat{ display:flex; flex-direction:column; gap:6px; max-width:640px; margin:0 auto 40px; padding:20px 24px; background:rgba(247,243,234,0.06); border:1px solid rgba(247,243,234,0.18); border-radius:var(--radius-sm); }
+  .elevator-stat b{ font-family:var(--font-mono); font-size:1rem; letter-spacing:.03em; color:#fff; font-variant-numeric:tabular-nums; }
+  .elevator-stat span{ font-size:.82rem; color:rgba(247,243,234,0.72); }
+  .elevator-close{ font-family:var(--font-display); font-weight:400; text-transform:uppercase; font-size:clamp(1.3rem,3vw,2rem); line-height:1.18; color:#fff; max-width:760px; margin:0 auto; }
+  @media (max-width:640px){ .elevator-band{ padding:56px 0; } }
 </style>
 </head>
 <body data-page="summary">
@@ -56,7 +65,8 @@
           <a href="#proposal">Five policy components</a>
           <a href="#model">What the model says</a>
           <a href="#open">Open questions</a>
-          <a href="#next">Next steps</a>
+          <a href="#next">What comes next</a>
+          <a href="#conclusion">Conclusion</a>
         </nav>
 
         <article class="summary-body">
@@ -104,18 +114,48 @@
           </div>
           <p>Because we have not answered these three questions for any particular city or state, this report does not recommend authorization in any particular place.</p>
 
-          <h2 id="next">Next steps</h2>
-          <p>We recommend funding locally led efforts in several cities where drivers and their organizations ask for support. Local drivers should choose whether to oppose robotaxi service, preserve or strengthen restrictions, or seek enforceable conditions — with shared legal, financial, and research tools so no city has to start from zero.</p>
+          <h2 id="next">What comes next</h2>
+          <p>We recommend funding locally led efforts in several cities where drivers and their organizations ask for support. Local drivers should choose whether to oppose robotaxi service, preserve or strengthen restrictions, or seek enforceable conditions — with shared legal, financial, and research tools so no city has to start from zero. Local workers should control the public voice; outside partners follow the goal drivers choose, not the other way around.</p>
 
-          <div class="callout amber">
-            <p>"The jobs are still here. The choices are still open." If a city or state requires companies to protect drivers and share enough of the gains to improve their lives, the country can demonstrate a larger promise: technological progress should improve the lives of the people whose work made it possible.</p>
+          <h3 style="font-size:1.05rem; color:var(--ink); margin:1.6em 0 .6em;">Other industries aren't waiting</h3>
+          <p>Passenger driving is a useful first case because the technology is visible and the trips can be measured — but truck, parcel, and transit workers are already using legislation and bargaining to shape automation on their own terms:</p>
+          <div class="grid grid-2" style="margin:16px 0 24px;">
+            <div class="card" style="padding:20px;">
+              <span class="num-badge">TEAMSTERS</span>
+              <p style="font-size:.92rem; margin:0;">Advanced human-operator bills in multiple states and bargained a requirement that United Parcel Service give six months' notice — and negotiate the effects — before deploying driverless vehicles.</p>
+            </div>
+            <div class="card" style="padding:20px;">
+              <span class="num-badge">TRANSPORT WORKERS UNION</span>
+              <p style="font-size:.92rem; margin:0;">Its 2024 agreement with the Central Ohio Transit Authority requires union approval before autonomous vehicles enter service and bars layoffs or wage cuts caused by the new technology.</p>
+            </div>
           </div>
+          <p>Different institutions provide different tools: cities can set conditions on permits and streets, states can regulate vehicles, public agencies can set purchasing terms, and unions can bargain over introduction, job security, and benefits. A longer-term question sits behind all of it — one idea worth further research is a public Automation Fund, separate from this driver framework, that could receive money or assets tied to automation's gains and use the returns for worker benefits, public services, or dividends. Alaska's Permanent Fund offers an analogy, not a design.</p>
 
-          <div class="no-print" style="display:flex; gap:14px; flex-wrap:wrap; margin-top:36px;">
-            <a href="files/Workers-First-AI-Report-One-Rideshare-Drivers-and-AVs.pdf" class="btn btn-primary" download>Download the full report (PDF)</a>
-            <a href="contact.html" class="btn btn-ghost">Talk to the project team →</a>
-          </div>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>Workers have already changed the rules of the rideshare industry. They organized for pay, benefits, bargaining, fair treatment, and institutions that did not exist when the platforms arrived. Many drivers spend long days waiting for enough trips to cover rent, bills, and family needs. A technology that lets people choose to work fewer hours without losing income, security, or useful service could improve their lives. A technology that removes paid trips and transfers income away from drivers would make their lives worse.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE ELEVATOR OPERATORS ===== -->
+  <section class="elevator-band">
+    <div class="container">
+      <span class="eyebrow" style="background:rgba(247,243,234,0.16); color:#fff; border-color:rgba(247,243,234,0.3);"><span class="dot"></span>Why attrition isn't enough</span>
+      <blockquote class="elevator-quote">"The history of elevator operators shows why attrition is insufficient. Their union called jobs that disappeared when departing workers were not replaced <em>&ldquo;silent firings.&rdquo;</em> Retirement can be a genuine benefit when chosen; it cannot become the rule for allowing an occupation to disappear."</blockquote>
+      <div class="elevator-stat">
+        <b>76,860 → 89,185 → 71,882</b>
+        <span>U.S. elevator operators counted in the 1940, 1950, and 1960 Census. Economist James Bessen found it the only detailed occupation in the 1950 Census whose subsequent disappearance could be attributed largely to automation.</span>
+      </div>
+      <p class="elevator-close">The jobs are still here. The choices are still open. Elevator operators watched their occupation disappear. Here, drivers have helped define what a fair response must achieve while they can still shape what comes next. If we can meet that challenge, we can show we are committed to becoming whole.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="no-print" style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+        <a href="files/Workers-First-AI-Report-One-Rideshare-Drivers-and-AVs.pdf" class="btn btn-primary" download>Download the full report (PDF)</a>
+        <a href="contact.html" class="btn btn-ghost">Talk to the project team →</a>
       </div>
     </div>
   </section>
