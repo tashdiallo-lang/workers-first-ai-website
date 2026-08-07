@@ -207,7 +207,7 @@ h1.h-xl{
 }
 .hero-meta .pill b{ color:#fff; }
 
-.hero-photos{ display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:1fr; gap:2px; background:var(--ink); position:relative; }
+.hero-photos{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:repeat(3,1fr); height:100%; gap:2px; background:var(--ink); position:relative; }
 .hero-photos img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05); }
 .hero-photos::after{
   content:""; position:absolute; inset:0; pointer-events:none;
