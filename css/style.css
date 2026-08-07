@@ -321,11 +321,51 @@ h1.h-xl{
 .tag.warm{ background:#F2ECD8; color:var(--amber-600); border-color:rgba(122,95,31,0.22); }
 .tag.teal{ background:#E9EBE2; color:var(--cyan-500); border-color:rgba(92,107,71,0.22); }
 
-/* ---- table of contents list ---- */
-.toc-list{ display:flex; flex-direction:column; }
-.toc-list li{ display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px dashed var(--border-strong); font-weight:700; color:var(--ink); }
-.toc-list li span.pg{ color:var(--ink-mute); font-weight:700; font-family:var(--font-mono); }
-.toc-list li.sub{ padding-left:20px; font-weight:500; color:var(--ink-soft); }
+/* ---- table of contents: front/back matter strip ---- */
+.toc-frontmatter{ display:flex; flex-wrap:wrap; gap:12px; margin:0 0 40px; }
+.toc-frontmatter:last-of-type{ margin:40px 0 0; }
+.toc-fm-item{
+  display:flex; align-items:baseline; gap:12px; flex:1 1 260px;
+  background:var(--surface-soft); border:2px solid var(--ink); padding:16px 18px;
+  font-family:var(--font-head); font-weight:700; color:var(--ink); font-size:.98rem;
+  transition:transform .14s ease, box-shadow .14s ease, background .14s ease;
+}
+.toc-fm-item:hover{ background:var(--blue-100); transform:translate(-2px,-2px); box-shadow:var(--shadow-sm); }
+.toc-fm-item span:first-child{ flex:1; }
+.toc-fm-item .pg{
+  font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums;
+  color:var(--blue-600); font-size:.86rem;
+}
+.toc-fm-item .pg::before{ content:"P."; margin-right:3px; color:var(--ink-mute); }
+
+/* ---- table of contents: numbered part cards ---- */
+.toc-parts{ display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--ink); border:2px solid var(--ink); }
+.toc-part{ background:var(--surface); padding:32px; transition:background .16s ease; }
+.toc-part:hover{ background:var(--surface-soft); }
+.toc-part-head{ display:flex; align-items:flex-start; gap:18px; margin-bottom:20px; }
+.toc-part-num{
+  font-family:var(--font-display); font-weight:400; font-size:2.6rem; line-height:.85;
+  color:var(--blue-600); flex:none;
+}
+.toc-part-range{
+  display:block; font-family:var(--font-mono); font-weight:700; font-size:.72rem; letter-spacing:.08em;
+  color:var(--ink-mute); margin-bottom:4px;
+}
+.toc-part-head h3{ margin:0; font-size:1.2rem; color:var(--ink); line-height:1.25; }
+.toc-part ul{ display:flex; flex-direction:column; }
+.toc-part li{ border-top:1px dashed var(--border-strong); }
+.toc-part li a{
+  display:flex; justify-content:space-between; align-items:baseline; gap:14px;
+  padding:11px 2px; font-size:.92rem; color:var(--ink-soft); text-decoration:none;
+  transition:color .12s ease, padding-left .12s ease;
+}
+.toc-part li a:hover{ color:var(--blue-600); padding-left:6px; }
+.toc-part li a:hover span:first-child{ text-decoration:underline; text-underline-offset:3px; }
+.toc-part li .pg{
+  font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums;
+  color:var(--blue-600); flex:none;
+}
+@media (max-width:760px){ .toc-parts{ grid-template-columns:1fr; } }
 
 /* ---- photo strip / masonry ---- */
 .photo-strip{ display:grid; grid-template-columns:repeat(6,1fr); gap:2px; background:var(--ink); border:2px solid var(--ink); }
