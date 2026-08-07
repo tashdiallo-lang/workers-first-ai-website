@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Media, Endorsements &amp; Support — Workers First AI</title>
+<meta name="description" content="Request an interview, endorse the policy framework, support the project's next phase, or share your story as a driver.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Contact</div>
+      <span class="eyebrow"><span class="dot"></span>One form, four reasons to reach us</span>
+      <h1 class="h-xl" style="max-width:760px;">Tell us why you're reaching out</h1>
+      <p class="lede" style="max-width:660px;">This is a report-first project — but reports don't change policy on their own. If you're covering this story, considering an endorsement, thinking about support, or you're a driver with a story, pick the option below that fits.</p>
+    </div>
+  </section>
+
+  <section class="tight bg-white">
+    <div class="container">
+      <div class="grid grid-4 reveal" style="margin-bottom:16px;">
+        <a href="#media" class="card" style="text-decoration:none;">
+          <div class="icon">🎙️</div><h3>Media request</h3><p>Interviews, data, quotes, deadlines.</p>
+        </a>
+        <a href="#endorse" class="card" style="text-decoration:none;">
+          <div class="icon">🤝</div><h3>Endorsement</h3><p>Add your name or organization.</p>
+        </a>
+        <a href="#support" class="card" style="text-decoration:none;">
+          <div class="icon">💛</div><h3>Support &amp; funding</h3><p>Back the next phase of research.</p>
+        </a>
+        <a href="#drivers" class="card" style="text-decoration:none;">
+          <div class="icon">🚗</div><h3>Driver stories</h3><p>Share what's happening in your city.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-alt">
+    <div class="container">
+      <div class="grid grid-2" style="gap:48px; align-items:flex-start;">
+
+        <!-- ===== CONTEXT PANELS ===== -->
+        <div class="reveal" style="display:flex; flex-direction:column; gap:20px;">
+          <div class="panel" id="media">
+            <span class="tag">Press</span>
+            <h3 style="margin-top:12px;">Media requests</h3>
+            <p>Journalists can request interviews with the project team, the underlying driver survey data, the financial model behind the revenue estimates, or high-resolution photography. We aim to respond to press inquiries within one business day.</p>
+          </div>
+          <div class="panel" id="endorse">
+            <span class="tag warm">Endorsement</span>
+            <h3 style="margin-top:12px;">Endorse the framework</h3>
+            <p>Elected officials, unions, worker organizations, academics, and companies can add their name in support of the five policy components — in full or in part. Tell us which parts you support and any conditions you'd attach.</p>
+          </div>
+          <div class="panel" id="support">
+            <span class="tag teal">Funding &amp; partnership</span>
+            <h3 style="margin-top:12px;">Support the project</h3>
+            <p>The next phase funds driver-led local campaigns and the shared legal, financial, and research tools they rely on. Funders retain no authority over findings or recommendations — every contribution is disclosed.</p>
+          </div>
+          <div class="panel" id="drivers">
+            <span class="tag">Drivers</span>
+            <h3 style="margin-top:12px;">Share your story</h3>
+            <p>Are you a rideshare or taxi driver? If robotaxis are expanding — or being debated — where you drive, we want to hear what's happening and connect you with driver organizing already underway.</p>
+          </div>
+        </div>
+
+        <!-- ===== FORM ===== -->
+        <div class="reveal">
+          <div class="panel" style="background:var(--surface);">
+            <div class="form-status" id="formStatus">✅ Thanks — your message is on its way to the project team.</div>
+
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="leadForm" action="/thank-you.html">
+              <input type="hidden" name="form-name" value="contact">
+              <input type="hidden" name="subject-line" value="Workers First AI website — General inquiry">
+              <p class="hp-field">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+              </p>
+
+              <div class="field full">
+                <label>What brings you here?</label>
+                <div class="reason-grid">
+                  <input type="radio" name="reason" value="Media request" id="r-media" checked>
+                  <label for="r-media">🎙️ Media<small>Press &amp; interviews</small></label>
+
+                  <input type="radio" name="reason" value="Endorsement" id="r-endorse">
+                  <label for="r-endorse">🤝 Endorse<small>Support the framework</small></label>
+
+                  <input type="radio" name="reason" value="Support & funding" id="r-support">
+                  <label for="r-support">💛 Support<small>Funding &amp; partnership</small></label>
+
+                  <input type="radio" name="reason" value="Driver story" id="r-drivers">
+                  <label for="r-drivers">🚗 Driver<small>Share your story</small></label>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field"><label for="f-name">Full name</label><input type="text" id="f-name" name="name" required placeholder="Jane Rivera"></div>
+                <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required placeholder="jane@example.com"></div>
+                <div class="field"><label for="f-org">Organization <span class="muted">(optional)</span></label><input type="text" id="f-org" name="organization" placeholder="Outlet, city, union, or company"></div>
+                <div class="field"><label for="f-role">Role <span class="muted">(optional)</span></label><input type="text" id="f-role" name="role" placeholder="Reporter, driver, policy staff…"></div>
+                <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="Tell us what you need, your deadline if any, and the best way to reach you."></textarea></div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Send message</button>
+              <p class="small muted" style="margin-top:14px; text-align:center;">We don't sell or share contact information. See how submissions are handled in our <a href="about.html#funding" style="text-decoration:underline;">funding &amp; independence</a> statement.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+<script>
+  // Preselect the reason chip that matches the page's #hash, if any.
+  (function(){
+    var map = { media:'r-media', endorse:'r-endorse', support:'r-support', drivers:'r-drivers' };
+    var id = map[(location.hash || '').replace('#','')];
+    if(id){
+      var el = document.getElementById(id);
+      if(el){ el.checked = true; el.dispatchEvent(new Event('change')); }
+    }
+  })();
+</script>
+</body>
+</html>
