@@ -87,15 +87,6 @@
     counters.forEach((el) => io.observe(el));
   }
 
-  function wireHeroCollage() {
-    const hero = document.querySelector(".hero-collage");
-    if (!hero) return;
-    // Set as inline style (not a CSS custom property) so the relative url()
-    // resolves against this HTML document, not against css/style.css.
-    hero.style.backgroundImage =
-      "linear-gradient(180deg, rgba(246,249,254,0.12) 0%, rgba(246,249,254,0.48) 34%, rgba(246,249,254,0.5) 66%, #f6f9fe 100%), url('images/driver-collage.jpg')";
-  }
-
   function wireContactForm() {
     const form = document.getElementById("leadForm");
     if (!form) return;
@@ -128,7 +119,6 @@
     wireMobileNav();
     wireReveal();
     wireCounters();
-    wireHeroCollage();
     wireContactForm();
   });
 })();
