@@ -170,7 +170,7 @@ h1.h-xl{
 @media (max-width: 1500px){
   .nav-cta a.btn-ghost{ display:none; }
 }
-@media (max-width: 920px){
+@media (max-width: 1150px){
   .nav-links{
     position:fixed; inset:var(--nav-h) 0 0 0; background:var(--bg); flex-direction:column; align-items:stretch;
     padding:20px; gap:4px; transform:translateY(-12px); opacity:0; pointer-events:none; transition:.2s ease;
