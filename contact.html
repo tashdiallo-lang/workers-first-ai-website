@@ -17,8 +17,8 @@
     <div class="container">
       <div class="breadcrumb">Contact</div>
       <span class="eyebrow"><span class="dot"></span>One form, four reasons to reach us</span>
-      <h1 class="h-xl" style="max-width:760px;">Tell us why you're reaching out</h1>
-      <p class="lede" style="max-width:660px;">This is a report-first project — but reports don't change policy on their own. If you're covering this story, considering an endorsement, thinking about support, or you're a driver with a story, pick the option below that fits.</p>
+      <h1 class="h-xl" style="max-width:760px;">Contact the Research Team</h1>
+      <p class="lede" style="max-width:660px;">We wrote this report because we wanted drivers, officials, and reporters to actually use it — so we'd rather hear from you than not. Working on a story, weighing an endorsement, thinking about support, or driving for a living yourself? Pick whichever fits below and tell us what's going on.</p>
     </div>
   </section>
 
@@ -118,16 +118,5 @@
 
 <div id="site-footer"></div>
 <script src="js/main.js"></script>
-<script>
-  // Preselect the reason chip that matches the page's #hash, if any.
-  (function(){
-    var map = { media:'r-media', endorse:'r-endorse', support:'r-support', drivers:'r-drivers' };
-    var id = map[(location.hash || '').replace('#','')];
-    if(id){
-      var el = document.getElementById(id);
-      if(el){ el.checked = true; el.dispatchEvent(new Event('change')); }
-    }
-  })();
-</script>
 </body>
 </html>

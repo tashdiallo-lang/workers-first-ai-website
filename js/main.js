@@ -110,6 +110,30 @@
     });
   }
 
+  function wireHashPreselect() {
+    // The homepage/footer/other pages link to contact.html#media, #endorse,
+    // #support, #drivers to preselect the matching "what brings you here"
+    // chip. A plain cross-page link always reloads the document and this
+    // runs fine on load — but a link to contact.html#xyz clicked *while
+    // already on contact.html* (e.g. the footer, which is on every page)
+    // is a same-document fragment navigation: the browser just scrolls and
+    // fires "hashchange", it does not reload. So this has to listen for
+    // hashchange too, not just run once on load.
+    const map = { media: "r-media", endorse: "r-endorse", support: "r-support", drivers: "r-drivers" };
+    function applyHash() {
+      const id = map[(location.hash || "").replace("#", "")];
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (el && !el.checked) {
+        el.checked = true;
+        el.dispatchEvent(new Event("change"));
+      }
+    }
+    if (!document.getElementById("leadForm")) return;
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     await Promise.all([
       include("site-header", "partials/header.html"),
@@ -120,5 +144,6 @@
     wireReveal();
     wireCounters();
     wireContactForm();
+    wireHashPreselect();
   });
 })();
