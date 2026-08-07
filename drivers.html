@@ -15,6 +15,23 @@
   .person img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:var(--radius); border:2px solid var(--ink); margin-bottom:10px; }
   .person .name{ font-family:var(--font-head); font-weight:700; font-size:.92rem; color:var(--blue-900); }
   .person .role{ font-size:.78rem; color:var(--ink-mute); }
+
+  .marquee{ overflow:hidden; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); background:var(--ink); margin-top:44px; }
+  .marquee-track{ display:flex; width:max-content; animation:marquee-scroll 55s linear infinite; }
+  .marquee-track:hover{ animation-play-state:paused; }
+  .marquee-track figure{ margin:0; flex:none; position:relative; }
+  .marquee-track img{ height:200px; width:auto; object-fit:cover; display:block; border-right:2px solid var(--ink); filter:saturate(.9); }
+  .marquee-track figcaption{
+    position:absolute; left:0; right:0; bottom:0; padding:8px 10px 7px;
+    background:linear-gradient(0deg, rgba(28,32,39,0.88), transparent);
+    color:#fff; font-family:var(--font-mono); font-size:.66rem; font-weight:700; letter-spacing:.02em;
+  }
+  @keyframes marquee-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (max-width:640px){ .marquee-track img{ height:140px; } }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation:none; }
+    .marquee{ overflow-x:auto; }
+  }
 </style>
 </head>
 <body data-page="drivers">
@@ -175,17 +192,30 @@
         <h2 class="h-lg">The people behind the passenger market</h2>
         <p class="lede">A few more of the drivers, organizers, and community members who gave their time to this research.</p>
       </div>
-      <div class="people-grid reveal">
-        <div class="person"><img src="images/bhoye.webp" alt="Bhoye"><div class="name">Bhoye</div><div class="role">Atlanta</div></div>
-        <div class="person"><img src="images/babacar.webp" alt="Babacar"><div class="name">Babacar</div><div class="role">Driver</div></div>
-        <div class="person"><img src="images/md-al.webp" alt="Md Al"><div class="name">Md Al</div><div class="role">Driver</div></div>
-        <div class="person"><img src="images/margery.webp" alt="Margery"><div class="name">Margery</div><div class="role">Driver</div></div>
-        <div class="person"><img src="images/alejandra-r.webp" alt="Alejandra R."><div class="name">Alejandra R.</div><div class="role">Driver</div></div>
-        <div class="person"><img src="images/liakat-v-car.webp" alt="Liakat Ali, in vehicle"><div class="name">Liakat Ali</div><div class="role">On the road</div></div>
-        <div class="person"><img src="images/jose-lc.webp" alt="Jose"><div class="name">Jose</div><div class="role">Driver</div></div>
-        <div class="person"><img src="images/jose-in-vehicle.webp" alt="Jose, in vehicle"><div class="name">Jose</div><div class="role">On the road</div></div>
-        <div class="person"><img src="images/bhoye-and-felippe-atl.webp" alt="Bhoye and Felippe, Atlanta"><div class="name">Bhoye &amp; Felippe</div><div class="role">Atlanta</div></div>
-        <div class="person"><img src="images/ny-group.webp" alt="New York driver group"><div class="name">NYC drivers</div><div class="role">Group photo</div></div>
+    </div>
+    <div class="marquee reveal">
+      <div class="marquee-track">
+        <figure><img src="images/bhoye.webp" alt="Bhoye"><figcaption>Bhoye — Atlanta</figcaption></figure>
+        <figure><img src="images/babacar.webp" alt="Babacar"><figcaption>Babacar</figcaption></figure>
+        <figure><img src="images/md-al.webp" alt="Md Al"><figcaption>Md Al</figcaption></figure>
+        <figure><img src="images/margery.webp" alt="Margery"><figcaption>Margery</figcaption></figure>
+        <figure><img src="images/alejandra-r.webp" alt="Alejandra R."><figcaption>Alejandra R.</figcaption></figure>
+        <figure><img src="images/liakat-v-car.webp" alt="Liakat Ali, in vehicle"><figcaption>Liakat Ali</figcaption></figure>
+        <figure><img src="images/jose-lc.webp" alt="Jose"><figcaption>Jose</figcaption></figure>
+        <figure><img src="images/jose-in-vehicle.webp" alt="Jose, in vehicle"><figcaption>Jose — on the road</figcaption></figure>
+        <figure><img src="images/bhoye-and-felippe-atl.webp" alt="Bhoye and Felippe, Atlanta"><figcaption>Bhoye &amp; Felippe</figcaption></figure>
+        <figure><img src="images/ny-group.webp" alt="New York driver group"><figcaption>NYC drivers</figcaption></figure>
+        <!-- duplicated for a seamless loop -->
+        <figure><img src="images/bhoye.webp" alt="Bhoye"><figcaption>Bhoye — Atlanta</figcaption></figure>
+        <figure><img src="images/babacar.webp" alt="Babacar"><figcaption>Babacar</figcaption></figure>
+        <figure><img src="images/md-al.webp" alt="Md Al"><figcaption>Md Al</figcaption></figure>
+        <figure><img src="images/margery.webp" alt="Margery"><figcaption>Margery</figcaption></figure>
+        <figure><img src="images/alejandra-r.webp" alt="Alejandra R."><figcaption>Alejandra R.</figcaption></figure>
+        <figure><img src="images/liakat-v-car.webp" alt="Liakat Ali, in vehicle"><figcaption>Liakat Ali</figcaption></figure>
+        <figure><img src="images/jose-lc.webp" alt="Jose"><figcaption>Jose</figcaption></figure>
+        <figure><img src="images/jose-in-vehicle.webp" alt="Jose, in vehicle"><figcaption>Jose — on the road</figcaption></figure>
+        <figure><img src="images/bhoye-and-felippe-atl.webp" alt="Bhoye and Felippe, Atlanta"><figcaption>Bhoye &amp; Felippe</figcaption></figure>
+        <figure><img src="images/ny-group.webp" alt="New York driver group"><figcaption>NYC drivers</figcaption></figure>
       </div>
     </div>
   </section>
