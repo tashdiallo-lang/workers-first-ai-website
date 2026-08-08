@@ -255,8 +255,8 @@ body:not([data-page="home"]):not([data-page="drivers"]) h2.h-lg{
 .hero-kicker{
   display:inline-flex; align-items:center; gap:10px; align-self:flex-start;
   font-family:var(--font-mono); font-weight:700; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
-  color:#fff; background:rgba(49,90,120,0.62); padding:7px 13px; border-radius:var(--radius-sm); margin-bottom:18px;
-  border:1px solid rgba(255,255,255,0.2);
+  color:var(--color-report-blue-deep); background:var(--color-soft-blue-tint); padding:7px 13px; border-radius:var(--radius-sm); margin-bottom:18px;
+  border:1px solid rgba(255,255,255,0.5);
 }
 .hero-copy h1.h-xl{
   color:#fff; margin-bottom:16px; font-family:var(--font-editorial); font-weight:600;
