@@ -8,13 +8,24 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 <style>
-  .people-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:20px; }
+  .people-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:22px 18px; padding:14px 0 40px; }
   @media (max-width:920px){ .people-grid{ grid-template-columns:repeat(3,1fr);} }
-  @media (max-width:560px){ .people-grid{ grid-template-columns:repeat(2,1fr);} }
-  .person{ text-align:center; }
-  .person img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:var(--radius); border:2px solid var(--ink); margin-bottom:10px; }
+  @media (max-width:560px){ .people-grid{ grid-template-columns:repeat(2,1fr); padding-bottom:20px;} }
+  .person{
+    text-align:center; background:var(--surface); border:2px solid var(--ink); padding:10px 10px 14px;
+    box-shadow:var(--shadow-sm); transition:transform .18s ease, box-shadow .18s ease; position:relative;
+  }
+  .person:nth-child(6n+1){ transform:rotate(-1.6deg); }
+  .person:nth-child(6n+2){ transform:rotate(1.1deg) translateY(20px); }
+  .person:nth-child(6n+3){ transform:rotate(-0.8deg) translateY(4px); }
+  .person:nth-child(6n+4){ transform:rotate(1.5deg) translateY(24px); }
+  .person:nth-child(6n+5){ transform:rotate(-1.2deg) translateY(8px); }
+  .person:nth-child(6n+6){ transform:rotate(0.9deg) translateY(18px); }
+  .person:hover{ transform:rotate(0deg) translateY(-6px) !important; box-shadow:var(--shadow-md); z-index:2; }
+  .person img{ width:100%; aspect-ratio:1/1; object-fit:cover; margin-bottom:12px; }
   .person .name{ font-family:var(--font-head); font-weight:700; font-size:.92rem; color:var(--blue-900); }
-  .person .role{ font-size:.78rem; color:var(--ink-mute); }
+  .person .role{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.03em; text-transform:uppercase; color:var(--ink-mute); }
+  @media (max-width:920px){ .person{ transform:none !important; } }
 
   .marquee{ overflow:hidden; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); background:var(--ink); margin-top:44px; }
   .marquee-track{ display:flex; width:max-content; animation:marquee-scroll 55s linear infinite; }
@@ -67,15 +78,15 @@
       <div class="section-head center reveal">
         <span class="eyebrow"><span class="dot"></span>With their permission</span>
         <h2 class="h-lg">Drivers who shaped this project</h2>
-        <p class="lede">The project identifies and photographs drivers only with their permission. These six New York City focus-group participants consented to be named in the report.</p>
+        <p class="lede">Participant anonymity is maintained unless express consent is provided for identification and photography.</p>
       </div>
       <div class="people-grid reveal">
-        <div class="person"><img src="images/shaun.webp" alt="Shaun Beckles"><div class="name">Shaun Beckles</div><div class="role">NYC focus group</div></div>
-        <div class="person"><img src="images/asad.webp" alt="Asad Iqbal"><div class="name">Asad Iqbal</div><div class="role">NYC focus group</div></div>
-        <div class="person"><img src="images/dashuan.webp" alt="Dachuan Nie"><div class="name">Dachuan Nie</div><div class="role">NYC focus group</div></div>
-        <div class="person"><img src="images/liakat-v.webp" alt="Liakat Ali"><div class="name">Liakat Ali</div><div class="role">NYC focus group</div></div>
-        <div class="person"><img src="images/muneed.webp" alt="Muneeb Rehman"><div class="name">Muneeb Rehman</div><div class="role">NYC focus group</div></div>
-        <div class="person"><img src="images/jose.webp" alt="Jose Gomez"><div class="name">Jose Gomez</div><div class="role">NYC focus group</div></div>
+        <div class="person"><img src="images/shaun.webp" alt="Shaun Beckles"><div class="name">Shaun B.</div><div class="role">NY Driver</div></div>
+        <div class="person"><img src="images/asad.webp" alt="Asad Iqbal"><div class="name">Asad I.</div><div class="role">NY Driver</div></div>
+        <div class="person"><img src="images/dashuan.webp" alt="Dachuan Nie"><div class="name">Dachuan N.</div><div class="role">NY Driver</div></div>
+        <div class="person"><img src="images/liakat-v.webp" alt="Liakat Ali"><div class="name">Liakat A.</div><div class="role">NY Driver</div></div>
+        <div class="person"><img src="images/muneed.webp" alt="Muneeb Rehman"><div class="name">Muneeb R.</div><div class="role">NY Driver</div></div>
+        <div class="person"><img src="images/jose.webp" alt="Jose Gomez"><div class="name">Jose G.</div><div class="role">NY Driver</div></div>
       </div>
     </div>
   </section>
