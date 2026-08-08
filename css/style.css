@@ -153,11 +153,15 @@ body:not([data-page="home"]):not([data-page="drivers"]) h2.h-lg{
 }
 
 /* ---- buttons ----
-   Two primary actions, kept visually distinct on purpose: .btn-primary is
-   the report-blue "research & briefing" action (read the summary, explore
-   the framework, request a briefing, send the contact form); .btn-warm is
-   the worker-red "download the report / driver voice" action. Everything
-   else is a neutral secondary. */
+   Three actions, kept visually distinct on purpose: .btn-ink is the
+   neutral "download the report itself" action — the report artifact is
+   an institutional, non-partisan document, so it gets the charcoal
+   treatment rather than either brand color. .btn-primary is the
+   report-blue "research & briefing" action (read the summary, explore
+   the framework, request a briefing, send the contact form). .btn-warm
+   is worker red, reserved for Driver Stories and participation/
+   endorsement CTAs — it must not appear on research-facing pages.
+   Everything else is a neutral secondary. */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
   font-family:var(--font-head); font-weight:700; font-size:.88rem;
@@ -167,6 +171,8 @@ body:not([data-page="home"]):not([data-page="drivers"]) h2.h-lg{
   transition:transform .14s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease, color .14s ease;
 }
 .btn:active{ transform:translateY(1px); }
+.btn-ink{ background:var(--color-ink); color:#fff; box-shadow:var(--shadow-sm); border-color:var(--color-ink); }
+.btn-ink:hover{ background:#2E3440; border-color:#2E3440; box-shadow:var(--shadow-md); }
 .btn-primary{ background:var(--color-report-blue); color:#fff; box-shadow:var(--shadow-sm); border-color:var(--color-report-blue); }
 .btn-primary:hover{ background:var(--color-report-blue-deep); border-color:var(--color-report-blue-deep); box-shadow:var(--shadow-md); }
 .btn-warm{ background:var(--color-worker-red); color:#fff; box-shadow:var(--shadow-sm); border-color:var(--color-worker-red); }
@@ -180,6 +186,18 @@ body:not([data-page="home"]):not([data-page="drivers"]) h2.h-lg{
 .btn-sm{ padding:10px 18px; font-size:.78rem; }
 .btn-block{ width:100%; }
 .btn[disabled]{ opacity:.6; cursor:not-allowed; }
+
+/* A de-emphasized secondary action next to a primary button or on a
+   colored band — underlined text, no button chrome, so it can't compete
+   for attention with the primary action beside it. */
+.quiet-link{
+  font-family:var(--font-head); font-weight:600; font-size:.92rem;
+  text-decoration:underline; text-underline-offset:3px; transition:color .14s ease;
+}
+.quiet-link{ color:var(--color-report-blue); }
+.quiet-link:hover{ color:var(--color-report-blue-deep); }
+.quiet-link.on-dark{ color:rgba(255,255,255,0.82); }
+.quiet-link.on-dark:hover{ color:#fff; }
 
 /* ---- nav ---- */
 #site-header{ position:sticky; top:0; z-index:1000; }
@@ -309,18 +327,19 @@ body:not([data-page="home"]):not([data-page="drivers"]) h2.h-lg{
 .card-photo .body{ padding:22px; }
 
 /* ---- pull quote ----
-   A thin worker-red left border marks every quotation as a driver's own
-   words — the one place red is reserved on research-facing pages, per the
-   "driver quotations" allowance in the brief. */
+   Report-blue by default — red is reserved for Driver Stories, endorsement,
+   and participation, so quotations on research-facing pages (the homepage)
+   get a neutral accent instead. Driver Stories re-adds red further down,
+   scoped to body[data-page="drivers"]. */
 .quote-card{
-  background:var(--surface); border:1px solid var(--color-border); border-left:4px solid var(--color-worker-red);
+  background:var(--surface); border:1px solid var(--color-border); border-left:4px solid var(--color-report-blue);
   border-radius:var(--radius);
   padding:28px 30px; display:flex; gap:20px; align-items:flex-start; box-shadow:var(--shadow-sm);
 }
 .quote-card img{ width:68px; height:68px; border-radius:var(--radius-sm); object-fit:cover; flex:none; border:1px solid var(--color-border); }
 .quote-card blockquote{ margin:0 0 12px; font-family:var(--font-editorial); font-size:1.12rem; color:var(--ink); font-weight:600; line-height:1.42; font-style:italic; }
 .quote-card cite{ font-style:normal; font-family:var(--font-mono); font-size:.78rem; color:var(--ink-mute); font-weight:600; text-transform:uppercase; letter-spacing:.03em; }
-.quote-mark{ font-family:var(--font-editorial); font-size:2.2rem; color:var(--color-worker-red); line-height:0; display:block; margin-bottom:8px; font-weight:700; }
+.quote-mark{ font-family:var(--font-editorial); font-size:2.2rem; color:var(--color-report-blue); line-height:0; display:block; margin-bottom:8px; font-weight:700; }
 
 /* ---- timeline / numbered list ---- */
 .steps{ display:flex; flex-direction:column; gap:0; }
@@ -516,6 +535,7 @@ body[data-page="drivers"] .quote-card{
 body[data-page="drivers"] .card:hover,
 body[data-page="drivers"] .quote-card:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(28,32,39,0.9); border-color:var(--color-ink); }
 body[data-page="drivers"] .quote-card{ border-left-width:6px; border-left-color:var(--color-worker-red); }
+body[data-page="drivers"] .quote-mark{ color:var(--color-worker-red); }
 body[data-page="drivers"] .stats{ border-radius:0; background:var(--color-ink); border-color:var(--color-ink); }
 body[data-page="drivers"] .stat .num{ font-family:var(--font-driver-display); font-weight:400; }
 
