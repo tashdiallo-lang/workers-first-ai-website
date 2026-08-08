@@ -116,17 +116,26 @@
   }
 
   function wireHashPreselect() {
-    // The homepage/footer/other pages link to contact.html#media, #endorse,
-    // #support, #drivers to preselect the matching "what brings you here"
+    // The homepage/footer/other pages link to contact.html#research, #media,
+    // #drivers, #partner to preselect the matching "what brings you here"
     // chip. A plain cross-page link always reloads the document and this
     // runs fine on load — but a link to contact.html#xyz clicked *while
     // already on contact.html* (e.g. the footer, which is on every page)
     // is a same-document fragment navigation: the browser just scrolls and
     // fires "hashchange", it does not reload. So this has to listen for
     // hashchange too, not just run once on load.
-    const map = { media: "r-media", endorse: "r-endorse", support: "r-support", drivers: "r-drivers" };
+    // #endorse is a special case: endorsement is an optional checkbox inside
+    // the form, not one of the four primary reasons, so it checks the box
+    // instead of selecting a "reason" radio.
+    const map = { research: "r-research", media: "r-media", drivers: "r-drivers", partner: "r-partner", support: "r-partner" };
     function applyHash() {
-      const id = map[(location.hash || "").replace("#", "")];
+      const hash = (location.hash || "").replace("#", "");
+      if (hash === "endorse") {
+        const checkbox = document.getElementById("f-endorse");
+        if (checkbox) checkbox.checked = true;
+        return;
+      }
+      const id = map[hash];
       if (!id) return;
       const el = document.getElementById(id);
       if (el && !el.checked) {

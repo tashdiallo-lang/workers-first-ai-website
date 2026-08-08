@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Media, Endorsements &amp; Support — Workers First AI</title>
-<meta name="description" content="Request an interview, endorse the policy framework, support the project's next phase, or share your story as a driver.">
+<title>Contact the Research Team — Workers First AI</title>
+<meta name="description" content="Ask a research or policy question, request an interview, share your experience as a driver, or discuss partnership and support with the Workers First AI project team.">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,17 +25,17 @@
   <section class="tight bg-white">
     <div class="container">
       <div class="grid grid-4 reveal" style="margin-bottom:16px;">
+        <a href="#research" class="card" style="text-decoration:none;">
+          <div class="icon">R</div><h3>Research &amp; policy inquiry</h3><p>Findings, methodology, framework questions.</p>
+        </a>
         <a href="#media" class="card" style="text-decoration:none;">
-          <div class="icon">M</div><h3>Media request</h3><p>Interviews, data, quotes, deadlines.</p>
-        </a>
-        <a href="#endorse" class="card" style="text-decoration:none;">
-          <div class="icon">E</div><h3>Endorsement</h3><p>Add your name or organization.</p>
-        </a>
-        <a href="#support" class="card" style="text-decoration:none;">
-          <div class="icon">S</div><h3>Support &amp; funding</h3><p>Back the next phase of research.</p>
+          <div class="icon">M</div><h3>Media request</h3><p>Interviews, quotes, deadlines.</p>
         </a>
         <a href="#drivers" class="card" style="text-decoration:none;">
-          <div class="icon">D</div><h3>Driver stories</h3><p>Share what's happening in your city.</p>
+          <div class="icon">D</div><h3>Driver experience</h3><p>Share what's happening in your city.</p>
+        </a>
+        <a href="#partner" class="card" style="text-decoration:none;">
+          <div class="icon">P</div><h3>Partnership or support</h3><p>Funding, endorsement, collaboration.</p>
         </a>
       </div>
     </div>
@@ -47,25 +47,25 @@
 
         <!-- ===== CONTEXT PANELS ===== -->
         <div class="reveal" style="display:flex; flex-direction:column; gap:20px;">
+          <div class="panel" id="research">
+            <span class="tag">Research</span>
+            <h3 style="margin-top:12px;">Research &amp; policy inquiries</h3>
+            <p>Researchers, policymakers, and advocates can ask about the report's methodology, findings, or policy framework, or request de-identified aggregate findings, methodology materials or a data dictionary, subject to privacy and consent safeguards.</p>
+          </div>
           <div class="panel" id="media">
             <span class="tag">Press</span>
             <h3 style="margin-top:12px;">Media requests</h3>
-            <p>Journalists can request interviews with the project team, the underlying driver survey data, the financial model behind the revenue estimates, or high-resolution photography. We aim to respond to press inquiries within one business day.</p>
-          </div>
-          <div class="panel" id="endorse">
-            <span class="tag">Endorsement</span>
-            <h3 style="margin-top:12px;">Endorse the framework</h3>
-            <p>Elected officials, unions, worker organizations, academics, and companies can add their name in support of the five policy components — in full or in part. Tell us which parts you support and any conditions you'd attach.</p>
-          </div>
-          <div class="panel" id="support">
-            <span class="tag">Funding &amp; partnership</span>
-            <h3 style="margin-top:12px;">Support the project</h3>
-            <p>The next phase funds driver-led local campaigns and the shared legal, financial, and research tools they rely on. Funders retain no authority over findings or recommendations — every contribution is disclosed.</p>
+            <p>Journalists can request interviews with the project team, the financial model behind the revenue estimates, or high-resolution photography. We aim to respond to press inquiries within one business day.</p>
           </div>
           <div class="panel" id="drivers">
             <span class="tag">Drivers</span>
-            <h3 style="margin-top:12px;">Share your story</h3>
+            <h3 style="margin-top:12px;">Share your experience</h3>
             <p>Are you a rideshare or taxi driver? If robotaxis are expanding — or being debated — where you drive, we want to hear what's happening and connect you with driver organizing already underway.</p>
+          </div>
+          <div class="panel" id="partner">
+            <span class="tag">Partnership</span>
+            <h3 style="margin-top:12px;">Partnership &amp; support</h3>
+            <p>Elected officials, unions, worker organizations, academics, and companies can back the next phase of research or add their name in support of the five policy components, in full or in part. Funders and partners retain no authority over findings or recommendations — every contribution is disclosed.</p>
           </div>
         </div>
 
@@ -84,17 +84,17 @@
               <div class="field full">
                 <label>What brings you here?</label>
                 <div class="reason-grid">
-                  <input type="radio" name="reason" value="Media request" id="r-media" checked>
+                  <input type="radio" name="reason" value="Research & policy inquiry" id="r-research" required>
+                  <label for="r-research">Research<small>Findings &amp; policy</small></label>
+
+                  <input type="radio" name="reason" value="Media request" id="r-media" required>
                   <label for="r-media">Media<small>Press &amp; interviews</small></label>
 
-                  <input type="radio" name="reason" value="Endorsement" id="r-endorse">
-                  <label for="r-endorse">Endorse<small>Support the framework</small></label>
+                  <input type="radio" name="reason" value="Driver experience" id="r-drivers" required>
+                  <label for="r-drivers">Driver<small>Share your experience</small></label>
 
-                  <input type="radio" name="reason" value="Support & funding" id="r-support">
-                  <label for="r-support">Support<small>Funding &amp; partnership</small></label>
-
-                  <input type="radio" name="reason" value="Driver story" id="r-drivers">
-                  <label for="r-drivers">Driver<small>Share your story</small></label>
+                  <input type="radio" name="reason" value="Partnership or support" id="r-partner" required>
+                  <label for="r-partner">Partner<small>Funding &amp; support</small></label>
                 </div>
               </div>
 
@@ -103,11 +103,20 @@
                 <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required placeholder="jane@example.com"></div>
                 <div class="field"><label for="f-org">Organization <span class="muted">(optional)</span></label><input type="text" id="f-org" name="organization" placeholder="Outlet, city, union, or company"></div>
                 <div class="field"><label for="f-role">Role <span class="muted">(optional)</span></label><input type="text" id="f-role" name="role" placeholder="Reporter, driver, policy staff…"></div>
+                <div class="field full" id="endorse" style="scroll-margin-top:120px;">
+                  <label for="f-endorse" style="display:flex; align-items:flex-start; gap:10px; text-transform:none; font-weight:600; font-size:.95rem; cursor:pointer;">
+                    <input type="checkbox" id="f-endorse" name="endorsement" value="Yes — treat this as a formal endorsement of the framework" style="width:auto; margin-top:3px;">
+                    <span>Treat this as a formal endorsement of the five-part policy framework
+                      <span class="muted" style="display:block; font-weight:500; font-size:.82rem; text-transform:none; margin-top:2px;">Optional. Elected officials, unions, organizations, and companies can endorse in full or in part — tell us which parts, and any conditions, in your message.</span>
+                    </span>
+                  </label>
+                </div>
                 <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="Tell us what you need, your deadline if any, and the best way to reach you."></textarea></div>
               </div>
 
               <button type="submit" class="btn btn-primary btn-block">Send message</button>
               <p class="small muted" style="margin-top:14px; text-align:center;">Information submitted through this form will be used to review and respond to your message. Submitting information does not authorize its publication or public attribution.</p>
+              <p class="small muted" style="margin-top:8px; text-align:center;">We retain submissions only as long as needed to respond to your message and keep a record of outreach. To request deletion of your information, use this form and reference your original message.</p>
             </form>
           </div>
         </div>
