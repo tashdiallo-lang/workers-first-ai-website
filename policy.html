@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
   .pc-nav{ display:flex; flex-wrap:wrap; gap:10px; margin:36px 0 0; }
-  .pc-nav a{ font-family:var(--font-mono); font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.03em; padding:9px 16px; border-radius:var(--radius-sm); border:2px solid var(--ink); background:var(--surface); }
-  .pc-nav a:hover{ background:var(--blue-100); border-color:var(--blue-500); }
+  .pc-nav a{ font-family:var(--font-mono); font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.03em; padding:9px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-strong); background:var(--surface); transition:background .14s ease, border-color .14s ease, color .14s ease; }
+  .pc-nav a:hover{ background:var(--blue-100); border-color:var(--blue-500); color:var(--blue-700); }
   .pc-block{ scroll-margin-top:100px; padding:56px 0; border-bottom:1px solid var(--border); }
   .pc-block:last-child{ border-bottom:none; }
   .pc-head{ display:flex; gap:22px; align-items:flex-start; margin-bottom:26px; }
-  .pc-head .n{ width:56px; height:56px; border-radius:var(--radius); background:var(--gradient-brand); color:#fff; font-family:var(--font-display); font-weight:400; font-size:1.6rem; display:flex; align-items:center; justify-content:center; flex:none; }
+  .pc-head .n{ width:52px; height:52px; border-radius:var(--radius); background:var(--gradient-brand); color:#fff; font-family:var(--font-editorial); font-weight:700; font-size:1.4rem; display:flex; align-items:center; justify-content:center; flex:none; }
   .req-list{ display:flex; flex-direction:column; gap:0; margin:24px 0; }
 </style>
 </head>
@@ -134,7 +134,7 @@
       </div>
 
       <div class="panel panel-warm reveal">
-        <h4 style="color:#7a4300; margin-bottom:16px;">Five local decisions this report cannot make</h4>
+        <h4 style="color:var(--blue-700); margin-bottom:16px;">Five local decisions this report cannot make</h4>
         <div class="grid grid-2" style="gap:14px;">
           <p style="margin:0;">1. <strong>Which drivers qualify</strong> — and who remains responsible for fair pay in human-driven work?</p>
           <p style="margin:0;">2. <strong>How much robotaxi service</strong> will public officials allow, and what triggers less?</p>

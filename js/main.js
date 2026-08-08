@@ -55,10 +55,15 @@
   function wireCounters() {
     const counters = document.querySelectorAll("[data-count-to]");
     if (!counters.length) return;
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const animate = (el) => {
       const target = parseFloat(el.getAttribute("data-count-to"));
       const suffix = el.getAttribute("data-suffix") || "";
       const decimals = el.getAttribute("data-decimals") ? parseInt(el.getAttribute("data-decimals"), 10) : 0;
+      if (reduceMotion) {
+        el.textContent = target.toFixed(decimals) + suffix;
+        return;
+      }
       const duration = 1100;
       const start = performance.now();
       function tick(now) {
