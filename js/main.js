@@ -139,6 +139,24 @@
     window.addEventListener("hashchange", applyHash);
   }
 
+  function wireMarqueeToggle() {
+    // Hover-to-pause doesn't help touch/keyboard users, and a strip that
+    // scrolls on its own for the whole time on page counts as
+    // auto-updating content — give it an explicit, accessible pause control.
+    const toggle = document.getElementById("marqueeToggle");
+    const track = document.getElementById("marqueeTrack");
+    if (!toggle || !track) return;
+    const label = toggle.querySelector(".marquee-toggle-label");
+    const icon = toggle.querySelector(".marquee-toggle-icon");
+    toggle.addEventListener("click", () => {
+      const paused = track.classList.toggle("paused");
+      toggle.setAttribute("aria-pressed", String(paused));
+      toggle.setAttribute("aria-label", paused ? "Resume the scrolling photos" : "Pause the scrolling photos");
+      if (label) label.textContent = paused ? "Play" : "Pause";
+      if (icon) icon.textContent = paused ? "▶" : "❚❚";
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     await Promise.all([
       include("site-header", "partials/header.html"),
@@ -150,5 +168,6 @@
     wireCounters();
     wireContactForm();
     wireHashPreselect();
+    wireMarqueeToggle();
   });
 })();
