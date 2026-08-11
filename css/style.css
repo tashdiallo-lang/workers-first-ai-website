@@ -250,7 +250,7 @@ body:not([data-page="home"]):not([data-page="drivers"]) h2.h-lg{
   .nav-cta .btn span.long{ display:none; }
 }
 @media (max-width: 560px){
-  .nav-cta .btn-warm{ display:none; }
+  .nav-cta .btn-ink{ display:none; }
   .brand{ font-size:.92rem; gap:8px; }
   .brand .mark{ width:28px; height:28px; }
 }
